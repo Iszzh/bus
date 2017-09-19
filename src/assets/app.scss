@@ -1,0 +1,718 @@
+html{
+  background-color: #efefef;
+}
+$loginColor:#e6e6e6;
+$tColor:#ff68d2;
+$bgw:#ffffff;
+//flex布局居中样式
+@mixin flexCenter{
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+}
+//flex布局Between样式
+@mixin flexBetween{
+  display: -webkit-flex;
+  -webkit-justify-content: space-between;
+  -webkit-align-items: center;
+}
+//flex布局warp
+@mixin flexWarp{
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-flex-wrap: wrap
+}
+//flex布局上下对齐
+@mixin flexDire{
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-between;
+}
+@mixin flexR{
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: space-around;
+}
+//省略一行字，末尾变为省略号ellipsis==>ell
+@mixin ell{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+//省略2行
+@mixin ellTwo{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+//基本样式
+@mixin nStyle{
+  padding: 0.4rem;
+  background-color: $bgw;
+}
+//position:fixed样式
+@mixin pf{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#login{
+  @include flexWarp;
+  -webkit-align-content: flex-start;
+  padding: 0 0.6rem;
+  .loginTop{
+    width: 100%;
+    height: 6.2rem;
+    @include flexCenter;
+    .logoBg{
+      width: 2.24rem;
+      height:2.24rem;
+      background-color: #eaa9b3;
+      border-radius: 50%;
+      opacity: 0.7;
+      @include flexCenter;
+      img{
+        width: 1.6rem;
+        height: 1rem;
+      }
+    }
+  }
+  .loginInput{
+    padding-left: 0.36rem;
+    padding-right: 0.1rem;
+    height: 1.08rem;
+    margin-bottom: 0.48rem;
+    border: 1px solid $loginColor;
+    border-radius: 2.5rem;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    .flex{
+      display: -webkit-flex;
+    }
+    .icon{
+      color: $loginColor;
+      font-size: 0.5rem;
+    }
+    input{
+      background-color: transparent;
+      border: none;
+      outline: none;
+      margin-left: 0.28rem;
+      font-size: 0.37333rem;
+      color: $loginColor;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: $loginColor; opacity:1;
+    }
+
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: $loginColor;opacity:1;
+    }
+
+    input:-ms-input-placeholder{
+      color: $loginColor;opacity:1;
+    }
+
+    input::-webkit-input-placeholder{
+      color: $loginColor;opacity:1;
+    }
+  }
+  .forgetPwd{
+    float: right;
+    clear: both;
+    color: $loginColor;
+    font-size: 0.32rem;
+    margin-right: 0.28rem;
+  }
+  .loginBtn{
+    padding: 0.36rem;
+    margin-bottom: 0.48rem;
+    border-radius: 2.5rem;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    background-color: #ffffff;
+    color: $tColor;
+    font-size: 0.37333rem;
+    @include flexCenter;
+  }
+  .signBtn{
+    color: $loginColor;
+    font-size: 0.32rem;
+    @include flexCenter;
+  }
+  .regCode{
+    background-color:#f784c3;
+    color: #ffffff;
+    padding: 0.2rem;
+    border-radius: 1.2rem;
+    font-size: 0.32rem;
+  }
+}
+
+#home{
+  .topLeft{
+    color: #ffffff;
+    position: absolute;
+    top: 0.4rem;
+    left: 1.4em;
+    z-index: 999;
+    font-size: 0.32rem;
+  }
+  .topRight{
+    color: #ffffff;
+    position: absolute;
+    top: 1.4em;
+    right: 1.4em;
+    z-index: 999;
+  }
+  .swipes{
+    height: 5.6rem;
+    width: 10rem;
+  }
+  .navRang{
+    width: 1.08rem;
+    height: 1.08rem;
+    border-radius: 50%;
+    @include flexCenter;
+    i{
+      font-size: 0.75rem;
+    }
+  }
+  //汽车图标颜色
+  .busC{
+    border: 1px solid #0abca1;
+    color: #0abca1;
+  }
+  //卡片图标颜色
+  .cardC{
+    border: 1px solid #c2ab0f;
+    color: #c2ab0f;
+  }
+  //餐具图标颜色
+  .knifeC{
+    border: 1px solid #e051b6;
+    color: #e051b6;
+  }
+  //红色盒子颜色
+  .boxC{
+    border: 1px solid #20bee0;
+    color: #20bee0;
+  }
+  .navFont{
+    div{
+      text-align: center;
+    }
+  }
+}
+
+
+.homeNav{
+  padding: 0.4rem 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+.homeBusNav{
+  margin-top: 0.28rem;
+  @include nStyle;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 0.32rem;
+  color: #666666;
+  .clickNav{
+    color: #000000;
+    font-size: 0.37333rem;
+  }
+}
+.homeNew{
+  padding: 0.4rem 0.4rem 0.4rem 0;
+  border-bottom: 1px solid #e6e6e6;
+  display: -webkit-flex;
+  -webkit-justify-content: flex-start;
+  -webkit-align-items: center;
+  .homeImg{
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 0.15rem;
+  }
+  .newTit{
+    @include flexDire;
+    height: 2.4rem;
+    padding:0 0.4rem;
+    .newTitle{
+      color: #333333;
+      font-size: 0.4rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+    }
+    .newText{
+      color: #666666;
+      font-size: 0.34666rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .newTime{
+      color: #666666;
+      font-size: 0.29333rem;
+    }
+  }
+}
+
+#collect{
+  .coTop{
+    text-align: center;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0.4rem 0;
+    font-size: 0.46rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .coCenter{
+    font-size: 0.52rem;
+    color: #666666;
+    text-align: center;
+    margin-top: 1.56rem;
+    .con{
+      padding-top: 1.52rem;
+    }
+  }
+}
+
+#personal{
+  .pTop{
+    text-align: center;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0.4rem 0;
+    font-size: 0.46rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .pCenter{
+    font-size: 0.52rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 1.4rem;
+    .con{
+      padding-top: 1.52rem;
+    }
+    img{
+      width: 1.92rem;
+      height: 1.92rem;
+      border-radius: 50%;
+      margin-top: 0.52rem;
+    }
+    .pName{
+      color: #ffffff;
+      font-size: 0.4rem;
+    }
+    .pOp{
+      background-color:#000000;/* IE6和部分IE7内核的浏览器(如QQ浏览器)下颜色被覆盖 */
+      background-color:rgba(0,0,0,0.2); /* IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂，但解析为透明 */
+      width: 100%;
+      font-size: 0.32rem;
+      height: 1.2rem;
+      margin-top: 0.52rem;
+    }
+    .pSell{
+      @include nStyle;
+      border-bottom: 1px solid #d5d5d5;
+      margin-top: 0.24rem;
+      color: #333333;
+      @include flexBetween;
+    }
+    .logout{
+      width: 9.2rem;
+      border: 1px solid #d5d5d5;
+      border-radius: 1rem;
+      color: #666666;
+      padding: 0.36rem 0;
+      font-size: 0.37333rem;
+      margin: 0 auto;
+      margin-top: 2.4rem;
+      box-shadow: 0px 1px 1px 1px #d5d5d5;
+    }
+  }
+}
+
+#pay{
+  .payTop{
+    padding: 0.24rem 0.4rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    b{
+      font-size: 20px;
+    }
+    span{
+      font-size: 0.32rem;
+    }
+  }
+  .payCenter{
+    .selectWay{
+      @include nStyle;
+      display: -webkit-flex;
+      -webkit-align-items: center;
+      .payRang{
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 50%;
+        border: 1px solid $tColor;
+        text-align: center;
+        @include flexCenter;
+        div{
+          width: 0.28rem;
+          height: 0.28rem;
+          background-color: $tColor;
+          border-radius: 50%;
+          margin: 0 auto;
+        }
+      }
+      span{
+        font-size: 0.37333rem;
+        margin-left: 0.32rem;
+      }
+
+    }
+    .payone{
+      text-align: center;
+      background-color: #ffffff;
+      img{
+        width: 6.25rem;
+        height: auto;
+      }
+    }
+    .paytwo{
+      text-align: center;
+      background-color: #ffffff;
+      padding: 0.8rem 0;
+      img{
+        width: 2rem;
+        height: auto;
+      }
+    }
+  }
+}
+#service{
+  .serTop {
+    padding: 0.24rem 0.4rem;
+    background-color: #ffffff;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    b {
+      font-size: 20px;
+    }
+    span {
+      font-size: 0.32rem;
+    }
+  }
+  .serCenter{
+    .serSwi{
+      width: 10rem;
+      height: 6rem;
+    }
+    .sersNav{
+      padding: 0.4rem 0.4rem 0 0.4rem;
+      background-color: #ffffff;
+      border-bottom: 1px solid #d5d5d5;
+      color: #333333;
+    }
+    .serSty{
+      margin-left: 1.35rem;
+    }
+    .navRang{
+      width: 1.08rem;
+      height: 1.08rem;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 1.08rem;
+      margin: 0 auto;
+      i{
+        font-size: 0.75rem;
+      }
+    }
+    .Lottery{
+      color: #b5057a;
+      border: 1px solid #b5057a;
+    }
+    .Movies{
+      color: #b69f06;
+      border: 1px solid #b69f06;
+    }
+    .Shopping{
+      color: #3ec7d0;
+      border: 1px solid #3ec7d0;
+    }
+    .Tourist{
+      color: #931edd;
+      border: 1px solid #931edd;
+    }
+    .Car{
+      color: #10c432;
+      border: 1px solid #10c432;
+    }
+    .More{
+      color: #11adcf;
+      border: 1px solid #11adcf;
+    }
+    .navFont{
+      div{
+        text-align: center;
+      }
+    }
+  }
+}
+
+#line{
+  .lineTop{
+    @include flexBetween;
+    @include nStyle;
+    border-bottom: 1px solid #d5d5d5;
+    position: fixed;
+    width: 9.2rem;
+    top: 0;
+    left: 0;
+    color: #000;
+  }
+  .lineCenter{
+    margin: 1.5rem 0;
+    .line{
+      background-color: #fff;
+      padding: 0.4rem 0 0.4rem 0.4rem;
+      margin-top: 0.2rem;
+      border-bottom: 1px solid #e6e6e6;
+      .lineStart{
+        font-size: 0.32rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #e6e6e6;
+        i{
+          margin: 0 0.2rem;
+        }
+      }
+      .lineDis{
+        margin-top: 0.4rem;
+        margin-right: 0.4rem;
+        font-size: 0.4rem;
+        span{
+          color: $tColor;
+        }
+      }
+      .lineNext{
+        color: #666666;
+        margin-top: 0.24rem;
+        margin-right: 0.4rem;
+        font-size: 0.3rem;
+        .icon{
+          height: 0.32rem;
+          width: 0.3rem;
+          border-radius: 50%;
+          background-color: #b3b3b3;
+          i{
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#bus{
+  .busTop{
+    padding: 0.24rem 0.4rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    b{
+      font-size: 20px;
+    }
+    span{
+      font-size: 0.32rem;
+    }
+  }
+  .busCenter{
+    .busInfo{
+      @include nStyle;
+      border-bottom: 1px solid #e6e6e6;
+      .infoTit{
+        font-size: 0.4rem;
+        i{
+          margin: 0 0.2rem;
+        }
+        span{
+          color: $tColor;
+        }
+      }
+      .busTime{
+        color: #666666;
+        display: -webkit-flex;
+        -webkit-align-items: center;
+        span{
+          margin-right: 0.4rem;
+          margin-top: 0.32rem;
+        }
+      }
+    }
+    .busStation{
+      background-color: #f9f9f9;
+      width: 9.4rem;
+      padding-top: 0.64rem;
+      padding-bottom: 0.4rem;
+      margin: 0.4rem auto;
+      border-radius: 0.3rem;
+    }
+    .busLine{
+      height: 9.4rem;
+    }
+  }
+}
+
+#search{
+  .left{
+    padding: 0 0.4rem;
+    @include pf;
+    box-shadow: 0px -9px 16px 7px;
+  }
+  .center{
+    margin-top: 1rem;
+    .clear{
+      padding: 0.28rem;
+      background-color: #f9f9f9;
+      @include flexBetween;
+      b{
+        font-size: 0.4rem;
+      }
+      i{
+        font-size: 18px;
+      }
+    }
+    .history{
+      padding: 0.08rem;
+      background-color: #efefef;
+      .list{
+        background-color: #f7f7f7;
+        border: 1px solid #d5d5d5;
+        padding:0.28rem;
+        font-size: 20px;
+        border-radius: 0.15rem;
+        margin-top: 0.2rem;
+        box-shadow: 0px 1px 1px 1px #d5d5d5;
+      }
+    }
+  }
+}
+
+#navs{
+  @include flexR;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 0.28rem;
+  border-top: 1px solid #eeeeee;
+  box-shadow: 0px 1px 3px 2px #eeeeee;
+  .bottomNav{
+    text-align: center;
+    color: #999999;
+    .iconfont{
+      font-size: 22px;
+    }
+  }
+  .router-link-active{
+    color: $tColor;
+  }
+}
+
+
+.flexC{
+  @include flexCenter;
+}
+.flexL{
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-flex-direction: column;
+}
+.flexB{
+  @include flexBetween;
+}
+.flexD{
+  @include flexDire;
+}
+.flexR{
+  @include flexR;
+}
+
+//swipe样式
+.mint-swipe-indicator.is-active {
+  background: #e051b6;
+  width: 0.48rem;
+  border-radius: 6px;
+}
+.mint-swipe-indicator {
+  width: 0.2rem;
+  height: 0.2rem;
+  background: #ffffff;
+  opacity: 1;
+  margin:0 0.14rem;
+}
+
+//mu-auto-complete样式
+.mu-text-field-content {
+  display: block;
+  height: 100%;
+  padding-bottom: 7px;
+  padding-top: 4px;
+}
+.mu-text-field-line {
+  margin: 0;
+  height: 1px;
+  border: none;
+  //去除下划线,改为白色
+  background-color: #ffffff;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+.mu-text-field {
+  font-size: 16px;
+  width: 256px;
+  min-height: 43px;
+  display: inline-block;
+  position: relative;
+  color: rgba(0,0,0,.54);
+  margin-bottom: 1px;
+}
+.mu-text-field-focus-line {
+  margin: 0;
+  height: 2px;
+  border: none;
+  background-color: #000000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: -1px;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: -webkit-transform .45s cubic-bezier(.23,1,.32,1);
+  transition: -webkit-transform .45s cubic-bezier(.23,1,.32,1);
+  transition: transform .45s cubic-bezier(.23,1,.32,1);
+  transition: transform .45s cubic-bezier(.23,1,.32,1),-webkit-transform .45s cubic-bezier(.23,1,.32,1);
+}
+
+
+.floatL{
+  float: left;
+}

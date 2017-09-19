@@ -1,0 +1,10 @@
+[0905/091840.587:ERROR:process_info.cc(343)] VirtualQueryEx: 拒绝访问。 (0x5)
+[0905/091840.602:ERROR:process_info.cc(564)] ReadMemoryInfo failed
+[0905/091840.602:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0905/091840.602:ERROR:exception_snapshot_win.cc(87)] thread ID 8396 not found in process
+[0905/091840.602:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0905/091840.602:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
+[0907/092944.201:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0907/092944.201:ERROR:exception_snapshot_win.cc(87)] thread ID 14012 not found in process
+[0907/092944.201:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0907/092944.201:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
